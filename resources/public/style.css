@@ -1,0 +1,105 @@
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+.circle-draw {
+    margin: 20px 30px;
+    background: #eeeeee;
+    min-height: 80vh;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.action-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn ~ .btn {
+    margin-left: 20px;
+}
+
+.ci-container {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid black;
+    margin-top: 10px;
+    min-height: calc(80vh - 10px);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.circle {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.circle:hover {
+    background-color: #D3D3D3;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 10px 20px 20px;
+    border: 1px solid #888;
+    width: 300px; /* Could be more or less, depending on screen size */
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+
+    position: relative;
+    right: -10px;
+    top: -10px;
+    margin:-10px;
+    padding:10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+input[type=range] {
+    width: 100%;
+}
+
