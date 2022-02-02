@@ -1,10 +1,10 @@
 (ns circle.events
   (:require
-    [re-frame.core :as re-frame]
     [circle.db :as db]
-    [day8.re-frame.undo :as undo :refer [undoable]]
     [circle.modal :refer [modal-show]]
-    ))
+    [day8.re-frame.undo :as undo :refer [undoable]]
+    [re-frame.core :as re-frame]))
+
 
 (re-frame/reg-event-db
   ::initialize-db
@@ -19,6 +19,7 @@
     (println ci)
     (assoc-in db [:circles] (conj (:circles db) ci))))
 
+
 (re-frame/reg-event-db
   :set-active-circle
   (undoable "Setting active circle")
@@ -26,13 +27,14 @@
     (modal-show)
     (assoc-in db [:active-circle] ci)))
 
+
 (re-frame/reg-event-db
   :active-circle-changed
   (fn [db [_ circle size]]
     (println circle size)
     (assoc db :circles
-              (conj
-                (filter
-                  #(and (not= (:x %) (:x circle)) (not= (:y %) (:y circle)))
-                  (:circles db))
-                (assoc circle :d size)))))
+           (conj
+             (filter
+               #(and (not= (:x %) (:x circle)) (not= (:y %) (:y circle)))
+               (:circles db))
+             (assoc circle :d size)))))

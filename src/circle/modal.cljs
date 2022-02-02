@@ -1,13 +1,21 @@
 (ns circle.modal
   (:require
     [goog.string :as gstring]
-    [reagent.core :as r]
-    [re-frame.core :as re-frame]))
+    [re-frame.core :as re-frame]
+    [reagent.core :as r]))
+
 
 (def ^:private shown? (r/atom false))
 
-(defn modal-show [] (reset! shown? true))
-(defn modal-hide [] (reset! shown? false))
+
+(defn modal-show
+  []
+  (reset! shown? true))
+
+
+(defn modal-hide
+  []
+  (reset! shown? false))
 
 
 (defn modal
@@ -24,7 +32,6 @@
                :max          100
                :defaultValue (:d @circle)
                :on-change    (fn [event]
-                               (re-frame/dispatch [:active-circle-changed @circle (-> event .-target .-value)]))}]
-      ]]))
+                               (re-frame/dispatch [:active-circle-changed @circle (-> event .-target .-value)]))}]]]))
 
 
