@@ -16,7 +16,6 @@
   :add-circle
   (undoable "Adding circle")
   (fn [db [_ ci]]
-    (println ci)
     (assoc-in db [:circles] (conj (:circles db) ci))))
 
 
@@ -31,7 +30,6 @@
 (re-frame/reg-event-db
   :active-circle-changed
   (fn [db [_ circle size]]
-    (println circle size)
     (assoc db :circles
            (conj
              (filter

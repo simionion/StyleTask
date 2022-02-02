@@ -1,6 +1,6 @@
 (ns circle.views
   (:require
-    [circle.modal :refer [modal modal-show]]
+    [circle.modal :refer [modal]]
     [circle.subs :as subs]
     [re-frame.core :as re-frame]))
 
@@ -60,5 +60,7 @@
                                           :top    (:y circle)
                                           :height (* 2 (:d circle))
                                           :width  (* 2 (:d circle))}
-                        :on-click        (fn [e] (.stopPropagation e) (re-frame/dispatch [:set-active-circle circle]))
-                        :on-context-menu (fn [e] (.preventDefault e) (re-frame/dispatch [:set-active-circle circle]))}])]]])
+                        :on-click        (fn [e] (.stopPropagation e)
+                                           (re-frame/dispatch [:set-active-circle circle]))
+                        :on-context-menu (fn [e] (.preventDefault e)
+                                           (re-frame/dispatch [:set-active-circle circle]))}])]]])
