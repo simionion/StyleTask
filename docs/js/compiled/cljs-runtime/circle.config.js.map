@@ -1,0 +1,1 @@
+{"version":3,"sources":["circle/config.cljs"],"mappings":";AAGA,AAAKA,6BACMC","names":["circle.config/debug?","js/goog.DEBUG"],"sourcesContent":["(ns circle.config)\n\n\n(def debug?\n  ^boolean goog.DEBUG)\n"]}
