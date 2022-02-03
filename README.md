@@ -2,6 +2,7 @@
 
 A [re-frame](https://github.com/day8/re-frame) application designed to draw circles :)
 
+Preview at [https://simionion.github.io/StyleTask/](https://simionion.github.io/StyleTask/).
 ## Getting Started
 
 ### Project Overview
