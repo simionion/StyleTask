@@ -11,14 +11,14 @@
   [binaryage/devtools "1.0.4"]]
 
  :dev-http
- {8280 "resources/public"
+ {8280 "docs"
   8290 "target/browser-test"}
 
  :builds
  {:app
   {:target     :browser
-   :output-dir "resources/public/js/compiled"
-   :asset-path "/js/compiled"
+   :output-dir "docs/js/compiled"
+   :asset-path "./js/compiled"
    :modules
    {:app {:init-fn circle.core/init}}
    :devtools

@@ -60,7 +60,9 @@
                                           :top    (:y circle)
                                           :height (* 2 (:d circle))
                                           :width  (* 2 (:d circle))}
-                        :on-click        (fn [e] (.stopPropagation e)
+                        :on-click        (fn [e]
+                                           (.stopPropagation e)
                                            (re-frame/dispatch [:set-active-circle circle]))
-                        :on-context-menu (fn [e] (.preventDefault e)
+                        :on-context-menu (fn [e]
+                                           (.preventDefault e)
                                            (re-frame/dispatch [:set-active-circle circle]))}])]]])
